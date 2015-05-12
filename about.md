@@ -10,5 +10,6 @@ Hello, I'm not roan. Welcome to his blog.
 
 cs.nctu.edu.tw@pichuang
 
-http://roan.logdown.com
-http://github.com/pichuang
+[作古的 Roan's blog](http://roan.logdown.com)
+
+[Github pichuang](http://github.com/pichuang)
