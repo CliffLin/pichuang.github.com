@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "ONOS on CentOS7"
-description: "Easy use"
+description: "Single ONOS instance"
 category: sdn
 tags: [onos]
 ---
 {% include JB/setup %}
+
+這篇是紀錄建立單台 onos controller 的文章
 
 Enviroment
 ==========
@@ -86,10 +88,8 @@ Build ONOS
 ==========
 
 * vim ~/Applications/apache-karaf-3.0.3/etc/org.apache.karaf.features.cfg
-```
-,mvn:org.onosproject/onos-features/1.2.0-SNAPSHOT/xml/features
-```
-  * 加在 featuresRepositories 後面
+    * featuresRepositories 最後面多加 ```,mvn:org.onosproject/onos-features/1.2.0-SNAPSHOT/xml/features```
+* 編譯 onos
 
 ```
 cd ~/onos
