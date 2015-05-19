@@ -96,8 +96,11 @@ tags: [hackathon]
 3. 線路應該要統一線材及規格, 還有要打標籤
 4. AP Management 機制太晚處理, 導致後續要再花一倍時間上設定
 5. R8000/R7000 或許刷 OpenWrt 會比較好控制, 傳輸效率上或許能更好, 但需要實測.
+6. NAT Server 應該要拿個 Software Router OS 來做, 譬如 [pfSense](https://www.pfsense.org/), [VyOS](http://vyos.net/)...等
+7. 若之後有用 OpenWrt 的話, 設定部分可以找個 IT Automation software 來做, 譬如拿 [Ansible](http://www.ansible.com/home) 就很適合 
 
 ## Reference
 - [2.4Ghz 與 5Ghz 穿透性與傳輸效果](http://diveduino.blogspot.tw/2014/05/24ghz-5ghz.html)
 - [Cisco ASA 5510 UTM 基礎設定](http://wiki.weithenn.org/cgi-bin/wiki.pl?%E5%BB%BA%E7%BD%AE%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7_Cisco_%E9%98%B2%E7%81%AB%E7%89%86_(%E4%B8%8A)#Heading9)
+- [List of router and firewall distributions](http://en.wikipedia.org/wiki/List_of_router_and_firewall_distributions)
 
