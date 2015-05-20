@@ -99,8 +99,12 @@ tags: [hackathon]
 6. NAT Server 應該要拿個 Software Router OS 來做, 譬如 [pfSense](https://www.pfsense.org/), [VyOS](http://vyos.net/)...等
 7. 若之後有用 OpenWrt 的話, 設定部分可以找個 IT Automation software 來做, 譬如拿 [Ansible](http://www.ansible.com/home) 就很適合 
 
+## Feedback
+- [FB討論串](https://www.facebook.com/paulintoro/posts/1070092773005774)
+- hwchiu 牛說 broadcom 有支援 ctf (Cut Through Forwarding), 主要是做 bypassing linux's stack, Forwarding 沒意外效率會好很多, 剛好 Netgear R8000 就有這顆晶片, 查了下文章 [Cut-Through Forwarding necessary on dd-wrt and tomato for throughput higer than 300Mbit](http://www.kmggroup.ch/?p=604) 說刷 DDWrt 就能用了
+
 ## Reference
 - [2.4Ghz 與 5Ghz 穿透性與傳輸效果](http://diveduino.blogspot.tw/2014/05/24ghz-5ghz.html)
 - [Cisco ASA 5510 UTM 基礎設定](http://wiki.weithenn.org/cgi-bin/wiki.pl?%E5%BB%BA%E7%BD%AE%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7_Cisco_%E9%98%B2%E7%81%AB%E7%89%86_(%E4%B8%8A)#Heading9)
 - [List of router and firewall distributions](http://en.wikipedia.org/wiki/List_of_router_and_firewall_distributions)
-
+- [Broadcom's hardware acceleration](http://www.snbforums.com/threads/broadcoms-hardware-acceleration.18144/)
