@@ -17,11 +17,18 @@ categories:
 ## 切出 5 個 interface
 將原先 eth0.{1,2} 切成 5 個 interface eth0.{1,2,3,4,5}, 供 OpenvSwitch 針對 Port 做控制 
   
-[network 設定檔](https://gist.github.com/pichuang/9876454)
+[network 設定檔](https://gist.github.com/CliffLin/a48a461acbd2ee391079) (contributor : nosignal,CliffLin)
 
 裡面的 eth0.4 為什麼要特別設定呢? 在先舊的 config 我們都是透過 OpenWrt 替我們建好的 bridge 'lan' (192.168.1.1)來進行連線, 新的設定檔因為把 lan 拿掉, 所以要特別針對某個 interface (例如: eth0.4) 上一個 ip, 好方便連線設定
 
 而這個 interface 之後也不會將它 ```ovs-vsctl add-port```, 理由是避免你設定錯誤導致整台 AP 進不去的防制手段, 可以視為 ```Console port``` 
+
+由於wlan設定中, 我們把wifi network 接到名為 lan 的介面上，故我們需要在network設定檔中新增一個介面
+
+然而我們希望在開一個vlan來處理wlan，因此我們開了一個eth0.6的vlan
+
+* eth0.6 <->(bridge)<->lan<->wlan
+
 
 ## 開啟 WLAN
 將 /etc/config/wireless 裡面的兩行```option disabled 0 ``` remove 之後, 再下 ```wifi``` 啟動 wireless
@@ -36,11 +43,10 @@ ovs-vsctl add-port ovs-br eth0.1
 ovs-vsctl add-port ovs-br eth0.2
 ovs-vsctl add-port ovs-br eth0.3
 ovs-vsctl add-port ovs-br eth0.5
-ovs-vsctl add-port ovs-br wlan0
-ovs-vsctl add-port ovs-br wlab1
+ovs-vsctl add-port ovs-br eth0.6
 ```
 	* eth0.4 不加進去的理由已經寫在上面
-
+	* eth0.6 是wlan的port
 * 檢查
 ```
 ovs-vsctl show
